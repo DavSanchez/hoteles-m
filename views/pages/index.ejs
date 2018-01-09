@@ -2,7 +2,7 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
-  <style>
+  <!--<style>
     .jumbotron {
         background-image: url(img/background.jpg);
         text-align: center;
@@ -32,29 +32,19 @@
     body {
         position: relative;
     }
-</style>
+</style> -->
 </head>
 
-<body data-spy="scroll" data-target="#navbar" data-offset="150">
+<body>
 
   <% include ../partials/nav.ejs %>
 
     <div class="jumbotron" id="jumbotron">
       <h1 class="display-3">My Awesome App!</h1>
+      <img src="img/hotel1.jpg"/>
       <p class="lead">This is why YOU should download this fantastic app!</p>
       <hr class="m-y-2">
       <p>Want to know more? Join our mailing list!</p>
-
-      <form class="form-inline">
-        <div class="form-group">
-          <label class="sr-only" for="email">Email address</label>
-          <div class="input-group">
-            <div class="input-group-addon">@</div>
-            <input type="email" class="form-control" id="email" placeholder="Your email">
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Sign up</button>
-      </form>
     </div>
 
     <div class="container">
