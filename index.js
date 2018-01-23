@@ -11,14 +11,14 @@ express()
   //habdoble para habitacion doble
   //habsimple para habitacion simple
   //playa para excursion a la playa
-  .get('/db', function (request, response) {
+  .get('/habdoble', function (request, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-      client.query('SELECT * FROM servicios_table', function(err, result) {
+      client.query('SELECT * FROM servicios_table WHERE id_servicio=1', function(err, result) {
         done();
         if (err)
          { console.error(err); response.send("Error " + err); }
         else
-         { response.render('pages/db', {results: result.rows} ); }
+         { response.render('pages/habdoble', {results: result.rows} ); }
       });
     });
   })

@@ -1,33 +1,38 @@
 <!doctype html>
 <html>
+
 <head>
   <% include ../partials/header.ejs %>
-<style>
-    .jumbotron {
+    <style>
+      .jumbotron {
         background-image: url(img/hotel1.jpg);
         text-align: center;
         margin-top: 50px;
         width: 100%;
-    }
-    #hotelSummary {
+      }
+
+      #hotelSummary {
         text-align: center;
         margin-top: 50px;
         margin-bottom: 50px;
-    }
-    .card-img-top {
+      }
+
+      .card-img-top {
         width: 100%;
-    }
-    #appStoreIcon {
+      }
+
+      #appStoreIcon {
         width: 200px;
-    }
-    #hotelFooter {   
+      }
+
+      #hotelFooter {
         background-color: #e3f2fd;
         text-align: center;
         padding-top: 150px;
         margin-top: 50px;
         padding-bottom: 150px;
-    } 
-</style>
+      }
+    </style>
 </head>
 
 <body>
@@ -55,31 +60,36 @@
       <div class="card-deck-wrapper">
         <div class="card-deck">
           <div class="card">
-            <img class="card-img-top" src="img/habitacion.jpg" alt="Card image cap">
-            <div class="card-block">
-              <h4 class="card-title">
-                <i class="fa fa-bed"></i> Habitación Doble</h4>
-              <p class="card-text">Habitación doble toda crema.</p>
+            <a href="/habdoble">
+              <img class="card-img-top" src="img/habitacion.jpg" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">
+                  <i class="fa fa-bed"></i> Habitación Doble</h4>
+                <p class="card-text">Habitación doble toda crema.</p>
 
-            </div>
+              </div>
+            </a>
+          </div>
+          </a>
+          <div class="card">
+            <a href="/habsimple">
+              <img class="card-img-top" src="img/singleHabit.jpg" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">
+                  <i class="fa fa-bed"></i> Habitación Simple</h4>
+                <p class="card-text">Habitación simple.</p>
+              </div>
+            </a>
           </div>
           <div class="card">
-            <img class="card-img-top" src="img/singleHabit.jpg" alt="Card image cap">
-            <div class="card-block">
-              <h4 class="card-title">
-                <i class="fa fa-bed"></i> Habitación Simple</h4>
-              <p class="card-text">Habitación simple.</p>
-
-            </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="img/beach.jpg" alt="Card image cap">
-            <div class="card-block">
-              <h4 class="card-title">
-                <i class="fa fa-sun-o"></i> Excursión a la playa</h4>
-              <p class="card-text">Agua y arena.</p>
-
-            </div>
+            <a href="/playa">
+              <img class="card-img-top" src="img/beach.jpg" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">
+                  <i class="fa fa-sun-o"></i> Excursión a la playa</h4>
+                <p class="card-text">Agua y arena en la playa de La Mortadela.</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -89,12 +99,13 @@
       <div>
         <h2>¡Aceptamos pago con Bitcoin!</h2>
         <p class="lead">Reserva ya</p>
-        <form action="https://bitpay.com/checkout" method="post" >
+        <form action="https://bitpay.com/checkout" method="post">
           <input type="hidden" name="action" value="cartAdd" />
           <input type="hidden" name="data" value="MX8VruNipjXemLSmPNJdjq" />
-          <input type="image" src="https://bitpay.com/img/button1.png" border="0" name="submit" alt="BitPay, pay with bitcoins." >
+          <input type="image" src="https://bitpay.com/img/button1.png" border="0" name="submit" alt="BitPay, pay with bitcoins.">
         </form>
       </div>
     </div>
 </body>
+
 </html>
