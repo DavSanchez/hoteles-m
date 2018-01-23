@@ -22,4 +22,26 @@ express()
       });
     });
   })
+  .get('/habsimple', function (request, response) {
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+      client.query('SELECT * FROM servicios_table WHERE id_servicio=2', function(err, result) {
+        done();
+        if (err)
+         { console.error(err); response.send("Error " + err); }
+        else
+         { response.render('pages/habsimple', {results: result.rows} ); } // TODO
+      });
+    });
+  })
+  .get('/playa', function (request, response) {
+    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+      client.query('SELECT * FROM servicios_table WHERE id_servicio=3', function(err, result) {
+        done();
+        if (err)
+         { console.error(err); response.send("Error " + err); }
+        else
+         { response.render('pages/playa', {results: result.rows} ); } // TODO
+      });
+    });
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
