@@ -22,10 +22,10 @@
         <div style="background-color: #e3f2fd; width: 100%;">
             <div class="container" style="padding: 15px;">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md">
                         <img src="img/singleHabit.jpg" style="height: 100%; width: 100%; object-fit: contain">
                     </div>
-                    <div class="col">
+                    <div class="col-md">
                         <% results.forEach(function(r) { %>
                             <h1>
                                 <%= r.nombre_servicio %>
@@ -36,7 +36,7 @@
                             <% }); %>
                                 <form action="https://bitpay.com/checkout" method="post">
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col-md">
                                             <div class="form-group">
                                                 <label for="habSimpleName">Nombre:</label>
                                                 <input type="text" class="form-control" id="habSimpleName" placeholder="Nombre">
@@ -46,7 +46,7 @@
                                                 <input type="email" class="form-control" id="habSimpleMail" placeholder="Email">
                                             </div>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-md">
                                             <div class="form-group">
                                                 <label for="habSimpleFechaIn">Llegada:</label>
                                                 <input type="text" class="form-control datepicker" id="habSimpleFechaIn" placeholder="Fecha de llegada">
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col-md">
                                             <p>Paga en Bitcoin haciendo clic en el botón o escanea el código QR con el móvil:</p>
                                             <input type="hidden" name="action" value="cartAdd" />
                                             <input type="hidden" name="data" value="ZnVWEByKYNanaCv3JAUHY" />
