@@ -18,14 +18,14 @@
 
     <% include ../partials/nav.ejs %>
 
-        <div class="container " style="padding: 15px; background-color: #e3f2fd; width: 100%">
+        <div class="container " style="padding: 15px; background-color: #e3f2fd; /*width: 100%*/;">
             <div class="row">
                 <div class="col">
                     <img src="img/habitacion.jpg">
                 </div>
                 <div class="col">
-                    <h1>results.nombre_servicio</h1>
-                    <p>results.descripcion</p>
+                    <h1>results[1].nombre_servicio</h1>
+                    <p>results[1].descripcion</p>
                 </div>
             </div>
             <h2>Database Results</h2>
