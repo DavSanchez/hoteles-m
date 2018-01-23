@@ -7,13 +7,14 @@
 <body>
 
 <% include ../partials/nav.ejs %>
+<div style="margin-top:50px;width:100%;"></div>
 
 <div class="container">
 <h2>Database Results</h2>
 
 <ul>
     <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
+        <li><%= r.id %> - <%= r.nombre_servicio %></li>
     <% }); %>
 </ul>
 
