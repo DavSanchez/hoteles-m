@@ -8,7 +8,7 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
             $(function () {
-                $("#datepicker").datepicker();
+                $(".datepicker").datepicker();
             });
         </script>
 </head>
@@ -18,10 +18,10 @@
 
     <% include ../partials/nav.ejs %>
 
-        <div class="container " style="padding: 15px; background-color: #e3f2fd; width: 100%;">
+        <div class="container" style="padding: 15px; background-color: #e3f2fd; width: 100%;">
             <div class="row">
                 <div class="col">
-                    <img src="img/habitacion.jpg">
+                    <img src="img/habitacion.jpg" style="object-fit: contain">
                 </div>
                 <div class="col">
                     <% results.forEach(function(r) { %>
@@ -34,22 +34,17 @@
                         <% }); %>
                 </div>
             </div>
-            <h2>Database Results</h2>
-
-            <ul>
-                <% results.forEach(function(r) { %>
-                    <li>
-                        <%= r.id_servicio %> -
-                            <%= r.nombre_servicio %>
-                    </li>
-                    <% }); %>
-            </ul>
+            <p>Nombre:
+                    <input type="text">
+                </p>
+            <p>Llegada:
+                <input type="date" class="datepicker">
+            </p>
+            <p>Salida:
+                <input type="date" class="datepicker">
+            </p>
 
         </div>
-
-        <p>Date:
-            <input type="text" id="datepicker">
-        </p>
 
         <!-- Modal -->
         <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
