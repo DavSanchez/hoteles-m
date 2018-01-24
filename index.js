@@ -8,6 +8,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .get('/redir', (req, res) => res.render('pages/redir'))
   //habdoble para habitacion doble
   //habsimple para habitacion simple
   //playa para excursion a la playa
