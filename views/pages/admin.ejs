@@ -3,12 +3,41 @@
 
 <head>
     <% include ../partials/header.ejs %>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+    
 </head>
 
 <body style="background-color: #B7DAF3;">
 
     <% include ../partials/nav.ejs %>
+        <div style="margin-top:56px;width:100%;"></div>
         <script src="js/navreset.js"></script>
+
+        <div id="donutchart" style="width: 900px; height: 500px;"></div>
+
         <div class="row justify-content-center" style="height:100vh;">
             <div class="col-6 align-self-center">
                 <div class="card text-center">
