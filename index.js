@@ -38,21 +38,28 @@ express()
   })
   .get('/admin', function (request, response) {  // TODO
     pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+
+      if (err) { console.error(err); response.send("Error " + err); }
+
       client.query('SELECT * FROM administrador_table', function (err, result) {
         done();
-        if (err) { console.error(err); response.send("Error " + err); }
-        else { response.render('pages/admin', { resultsAdmin: result.rows }); }
+        resultsAdmin: result.rows;
       });
-      client.query('SELECT * FROM cliente_table', function (err, result) {
+
+      client.query('SELECT * FROM clientes_table', function (err, result) {
         done();
-        if (err) { console.error(err); response.send("Error " + err); }
-        else { response.render('pages/admin', { resultsClients: result.rows }); }
+        resultsClientes: result.rows;
       });
+
       client.query('SELECT * FROM servicios_table', function (err, result) {
         done();
-        if (err) { console.error(err); response.send("Error " + err); }
-        else { response.render('pages/admin', { resultsServicios: result.rows }); }
+        resultsServicios: result.rows;
       });
-    });
+      done();
+
+      response.render('pages/admin', {
+        resultsAdmin, resultsClientes, resultsServicios
+      });
+    })
   })
   .listen(PORT, () => console.log(`Listening on ${PORT}`))
