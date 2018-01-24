@@ -47,10 +47,10 @@
                 <li><%= r.id_cliente %> - <%= r.id_servicio %> - <%= r.entrada %> - <%= r.salida %></li>
             <% }); %>
             <% resultsClientes.forEach(function(r) { %>
-                <li><%= r.id_cliente %> - <%= r.id_servicio %> - <%= r.entrada %> - <%= r.salida %></li>
+                <li><%= r.id_cliente %> - <%= r.nombre_cliente %></li>
             <% }); %>
             <% resultsServicios.forEach(function(r) { %>
-                <li><%= r.id_cliente %> - <%= r.id_servicio %> - <%= r.entrada %> - <%= r.salida %></li>
+                <li><%= r.id_servicio %> - <%= r.nombre_servicio %></li>
             <% }); %>
         </ul>
 
