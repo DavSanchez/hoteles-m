@@ -9,9 +9,6 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/redir', (req, res) => res.render('pages/redir'))
-  //habdoble para habitacion doble
-  //habsimple para habitacion simple
-  //playa para excursion a la playa
   .get('/habdoble', function (request, response) {
     pg.connect(process.env.DATABASE_URL, function (err, client, done) {
       client.query('SELECT * FROM servicios_table WHERE id_servicio=1', function (err, result) {
@@ -26,7 +23,7 @@ express()
       client.query('SELECT * FROM servicios_table WHERE id_servicio=2', function (err, result) {
         done();
         if (err) { console.error(err); response.send("Error " + err); }
-        else { response.render('pages/habsimple', { results: result.rows }); } // TODO
+        else { response.render('pages/habsimple', { results: result.rows }); }
       });
     });
   })
@@ -35,7 +32,16 @@ express()
       client.query('SELECT * FROM servicios_table WHERE id_servicio=3', function (err, result) {
         done();
         if (err) { console.error(err); response.send("Error " + err); }
-        else { response.render('pages/playa', { results: result.rows }); } // TODO
+        else { response.render('pages/playa', { results: result.rows }); }
+      });
+    });
+  })
+  .get('/admin', function (request, response) {  // TODO
+    pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+      client.query('SELECT * FROM servicios_table WHERE id_servicio=3', function (err, result) {
+        done();
+        if (err) { console.error(err); response.send("Error " + err); }
+        else { response.render('pages/playa', { results: result.rows }); }
       });
     });
   })
