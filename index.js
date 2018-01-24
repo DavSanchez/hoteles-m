@@ -6,8 +6,6 @@ pgp.pg.defaults.poolSize = 20;
 const db = pgp(process.env.DATABASE_URL);
 const PORT = process.env.PORT || 5000;
 
-// comment
-
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
