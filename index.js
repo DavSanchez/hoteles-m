@@ -41,7 +41,7 @@ express()
       client.query('SELECT * FROM servicios_table WHERE id_servicio=3', function (err, result) {
         done();
         if (err) { console.error(err); response.send("Error " + err); }
-        else { response.render('pages/playa', { results: result.rows }); }
+        else { response.render('pages/admin', { results: result.rows }); }
       });
     });
   })
