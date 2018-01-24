@@ -17,7 +17,7 @@ express()
     .then(data => {
       response.render('pages/habdoble', { results: result.rows });
     })
-    .catch(error => {
+    .catch(err => {
       console.error(err); response.send("Error " + err); // error
     });
   })
@@ -26,7 +26,7 @@ express()
     .then(data => {
       response.render('pages/habsimple', { results: result.rows });
     })
-    .catch(error => {
+    .catch(err => {
       console.error(err); response.send("Error " + err); // error
     });
   })
@@ -35,9 +35,9 @@ express()
     .then(data => {
       response.render('pages/playa', { results: result.rows });
     })
-    .catch(error => {
+    .catch(err => {
       console.error(err); response.send("Error " + err); // error
-    });;
+    });
   })
   .get('/admin', function (request, response) {  // TODO
     db.multi('SELECT * FROM administrador_table; SELECT * FROM clientes_table; SELECT * FROM servicios_table;')
@@ -50,7 +50,7 @@ express()
           resultsServicios: data[2].rows
         });
       })
-      .catch(error => {
+      .catch(err => {
         console.error(err); response.send("Error " + err); // error
       });
   })
