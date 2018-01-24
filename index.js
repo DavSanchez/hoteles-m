@@ -1,6 +1,9 @@
 const express = require('express')
 const path = require('path')
 const pg = require('pg')
+const pgp = require('pg-promise')
+pgp.pg.defaults.poolSize = 20;
+const db = pgp(process.env.DATABASE_URL);
 const PORT = process.env.PORT || 5000
 
 express()
