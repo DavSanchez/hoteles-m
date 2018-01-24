@@ -41,7 +41,17 @@ express()
       client.query('SELECT * FROM administrador_table', function (err, result) {
         done();
         if (err) { console.error(err); response.send("Error " + err); }
-        else { response.render('pages/admin', { results: result.rows }); }
+        else { response.render('pages/admin', { resultsAdmin: result.rows }); }
+      });
+      client.query('SELECT * FROM cliente_table', function (err, result) {
+        done();
+        if (err) { console.error(err); response.send("Error " + err); }
+        else { response.render('pages/admin', { resultsClients: result.rows }); }
+      });
+      client.query('SELECT * FROM servicios_table', function (err, result) {
+        done();
+        if (err) { console.error(err); response.send("Error " + err); }
+        else { response.render('pages/admin', { resultsServicios: result.rows }); }
       });
     });
   })

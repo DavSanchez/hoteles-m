@@ -43,8 +43,14 @@
         <h2>Database Results</h2>
 
         <ul>
-            <% results.forEach(function(r) { %>
-                <li><%= r.id_cliente %> - <%= r.id_servicio %> - <%= r.entrada %> - <% r.salida %></li>
+            <% resultsAdmin.forEach(function(r) { %>
+                <li><%= r.id_cliente %> - <%= r.id_servicio %> - <%= r.entrada %> - <%= r.salida %></li>
+            <% }); %>
+            <% resultsCLientes.forEach(function(r) { %>
+                <li><%= r.id_cliente %> - <%= r.id_servicio %> - <%= r.entrada %> - <%= r.salida %></li>
+            <% }); %>
+            <% resultsServicios.forEach(function(r) { %>
+                <li><%= r.id_cliente %> - <%= r.id_servicio %> - <%= r.entrada %> - <%= r.salida %></li>
             <% }); %>
         </ul>
 
