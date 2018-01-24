@@ -45,9 +45,9 @@ express()
         // data[0] = result from the first query;
         // data[1] = result from the second query;
         response.render('pages/admin', {
-          "results"Admin: data[0].rows,
-          "results"Clientes: data[1].rows,
-          "results"Servicios: data[2].rows
+          "resultsAdmin": data[0].rows,
+          "resultsClientes": data[1].rows,
+          "resultsServicios": data[2].rows
         });
       })
       .catch(err => {
