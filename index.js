@@ -40,7 +40,7 @@ express()
     });
   })
   .get('/admin', function (request, response) {  // TODO
-    db.multi('SELECT * FROM administrador_table; SELECT * FROM clientes_table; SELECT * FROM servicios_table;')
+    db.multi('SELECT * FROM administrador_table; SELECT * FROM cliente_table; SELECT * FROM servicios_table;')
       .then(data => {
         // data[0] = result from the first query;
         // data[1] = result from the second query;
