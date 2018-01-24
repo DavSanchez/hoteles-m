@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const pg = require('pg')
 const pgp = require('pg-promise')
-const db = pgp(process.env.DATABASE_URL);
+const db = pgp('postgres://wtbmogyuyrpgop:d1e8a0c2548a8b6ee1d3a8a948fab1972ded577af469c1dcd4d736658d5873d2@ec2-107-20-204-179.compute-1.amazonaws.com:5432/ddb8od40uve11f');
 const PORT = process.env.PORT || 5000
 
 express()
