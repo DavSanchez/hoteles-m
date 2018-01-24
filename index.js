@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const pg = require('pg')
 const pgp = require('pg-promise')
+pgp.pg.defaults.poolSize = 20
 const db = pgp(process.env.DATABASE_URL);
 const PORT = process.env.PORT || 5000
 
@@ -12,30 +13,36 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/redir', (req, res) => res.render('pages/redir'))
   .get('/habdoble', function (request, response) {
-    pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-      client.query('SELECT * FROM servicios_table WHERE id_servicio=1', function (err, result) {
-        done();
-        if (err) { console.error(err); response.send("Error " + err); }
-        else { response.render('pages/habdoble', { results: result.rows }); }
-      });
+    db.any('SELECT * FROM servicios_table WHERE id_servicio=1')
+    .then(function(data) {
+        // success;
+        response.render('pages/habdoble', { results: result.rows });
+    })
+    .catch(function(error) {
+        // error;
+        console.error(err); response.send("Error " + err);
     });
   })
   .get('/habsimple', function (request, response) {
-    pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-      client.query('SELECT * FROM servicios_table WHERE id_servicio=2', function (err, result) {
-        done();
-        if (err) { console.error(err); response.send("Error " + err); }
-        else { response.render('pages/habsimple', { results: result.rows }); }
-      });
+    db.any('SELECT * FROM servicios_table WHERE id_servicio=2')
+    .then(function(data) {
+        // success;
+        response.render('pages/habsimple', { results: result.rows });
+    })
+    .catch(function(error) {
+        // error;
+        console.error(err); response.send("Error " + err);
     });
   })
   .get('/playa', function (request, response) {
-    pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-      client.query('SELECT * FROM servicios_table WHERE id_servicio=3', function (err, result) {
-        done();
-        if (err) { console.error(err); response.send("Error " + err); }
-        else { response.render('pages/playa', { results: result.rows }); }
-      });
+    db.any('SELECT * FROM servicios_table WHERE id_servicio=3')
+    .then(function(data) {
+        // success;
+        response.render('pages/playa', { results: result.rows });
+    })
+    .catch(function(error) {
+        // error;
+        console.error(err); response.send("Error " + err);
     });
   })
   .get('/admin', function (request, response) {  // TODO
