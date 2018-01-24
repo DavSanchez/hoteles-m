@@ -15,7 +15,7 @@ express()
   .get('/habdoble', function (request, response) {
     db.any('SELECT * FROM servicios_table WHERE id_servicio=1')
     .then(data => {
-      response.render('pages/habdoble', { results: result.rows });
+      response.render('pages/habdoble', { results: data.rows });
     })
     .catch(err => {
       console.error(err); response.send("Error " + err); // error
@@ -24,7 +24,7 @@ express()
   .get('/habsimple', function (request, response) {
     db.any('SELECT * FROM servicios_table WHERE id_servicio=2')
     .then(data => {
-      response.render('pages/habsimple', { results: result.rows });
+      response.render('pages/habsimple', { results: data.rows });
     })
     .catch(err => {
       console.error(err); response.send("Error " + err); // error
@@ -33,7 +33,7 @@ express()
   .get('/playa', function (request, response) {
     db.any('SELECT * FROM servicios_table WHERE id_servicio=3')
     .then(data => {
-      response.render('pages/playa', { results: result.rows });
+      response.render('pages/playa', { results: data.rows });
     })
     .catch(err => {
       console.error(err); response.send("Error " + err); // error
