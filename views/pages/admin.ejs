@@ -51,7 +51,7 @@
                                     </td>
                                     <td>
                                         <% resultsClientes.forEach(function(idS) { %>
-                                        <%     if (ids.id_servicio == r.id_servicio) %>
+                                        <%     if (idS.id_servicio == r.id_servicio) %>
                                         <%=        idS.nombre_servicio; %>
                                         <% }); %>
                                     </td>
@@ -91,7 +91,8 @@
                     ['Habitaciones Dobles', 1],
                     ['Habitaciones Simples', 2],
                     ['Hamacas de Playa', 3],
-                    ['Huecos Libres', 14]
+                    ['Cabañas Flotantes', 1],
+                    ['Huecos Libres', 13]
                 ]);
 
                 var options = {
