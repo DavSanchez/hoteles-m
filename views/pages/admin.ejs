@@ -31,10 +31,10 @@
 
         <div class="vertical-center">
             <div class="container" style="background-color: #8ABDE1;">
-                <div>
+                <div class="container">
                     <div id="donutchart" style="width: 100%; height: 100%;"></div>
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive" style="background-color: #8ABDE1;">
                     <table class="table table-striped table-hover table-sm">
                         <thead class="thead-light">
                             <th scope="col">ID Cliente</th>
@@ -62,6 +62,19 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Ir a página
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="/habdoble">Habitación Doble</a>
+                          <a class="dropdown-item" href="/habsimple">Habitación Simple</a>
+                          <a class="dropdown-item" href="/playa">Excursión Playa</a>
+                          <a class="dropdown-item" href="/redir">Pago con Éxito</a>
+                        </div>
+                      </div>
+
             </div>
         </div>
 
@@ -76,7 +89,7 @@
                     ['Habitaciones Dobles', 1],
                     ['Habitaciones Simples', 2],
                     ['Hamacas de Playa', 3],
-                    ['Huecos Libres', 20]
+                    ['Huecos Libres', 14]
                 ]);
 
                 var options = {
