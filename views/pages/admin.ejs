@@ -14,7 +14,8 @@
         <style>
             .vertical-center {
                 background-color: #B7DAF3;
-                min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+                min-height: 100%;
+                /* Fallback for browsers do NOT support vh unit */
                 min-height: 100vh;
                 display: flex;
                 align-items: center;
@@ -30,7 +31,9 @@
 
         <div class="vertical-center">
             <div class="container" style="background-color: #8ABDE1;">
-                <div id="donutchart" style="width: 100%; height: 100%;"></div>
+                <div>
+                    <div id="donutchart" style="width: 100%; height: 100%;"></div>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-hover table-sm">
                         <thead class="thead-light">
@@ -73,11 +76,11 @@
                     ['Habitaciones Dobles', 1],
                     ['Habitaciones Simples', 2],
                     ['Hamacas de Playa', 3],
-                    ['Huecos Libres', 30]
+                    ['Huecos Libres', 20]
                 ]);
 
                 var options = {
-                    backgroundColor: "#E9ECEF",
+                    backgroundColor: "#B7DAF3",
                     title: 'Ocupación del Hotel',
                     pieHole: 0.4,
                 };
