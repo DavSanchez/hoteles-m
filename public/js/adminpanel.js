@@ -26,5 +26,3 @@ $(window).resize(function () {
 });
 
 // Database management
-
-
