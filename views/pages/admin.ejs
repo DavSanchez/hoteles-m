@@ -44,15 +44,17 @@
                                 <tr>
                                     <td>
                                         <% resultsClientes.forEach(function(idC) { %>
-                                        <%     if (idC.id_cliente == r.id_cliente) %>
+                                        <%     if (idC.id_cliente == r.id_cliente) { %>
                                         <%=        idC.nombre_cliente; %>
+                                        <%     } %>
                                         <% }); %>
                                                         <!-- <%= r.id_cliente %> -->
                                     </td>
                                     <td>
                                         <% resultsServicios.forEach(function(idS) { %>
-                                        <%     if (idS.id_servicio == r.id_servicio) %>
+                                        <%     if (idS.id_servicio == r.id_servicio) { %>
                                         <%=        idS.nombre_servicio; %>
+                                        <%     } %>
                                         <% }); %>
                                     </td>
                                     <td>
