@@ -12,6 +12,15 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/redir', (req, res) => res.render('pages/redir'))
+  .get('/cabflotante', function (request, response) {
+    db.any('SELECT * FROM servicios_table WHERE id_servicio=0')
+    .then(data => {
+      response.render('pages/cabflotante', { results: data })
+    })
+    .catch(err => {
+      console.error(err); response.send("Error " + err)
+    })
+  })
   .get('/habdoble', function (request, response) {
     db.any('SELECT * FROM servicios_table WHERE id_servicio=1')
     .then(data => {
