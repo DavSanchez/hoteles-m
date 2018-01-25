@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/header.ejs %>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $(".datepicker").datepicker();
+            });
+        </script>
+</head>
+
+<body>
+    <!-- TODO (partials?) -->
+
+    <% include ../partials/nav.ejs %>
+        <div style="margin-top:56px;width:100%;"></div>
+        <script src="js/navreset.js"></script>
+
+        <div style="background-color: #B7DAF3; width: 100%;">
+            <div class="container" style="padding: 15px;">
+                <div class="row">
+                    <div class="col-md">
+                        <img src="img/cabana.jpg" style="height: 100%; width: 100%; object-fit: contain">
+                    </div>
+                    <div class="col-md">
+                        <% results.forEach(function(r) { %>
+                            <h1>
+                                <%= r.nombre_servicio %>
+                            </h1>
+                            <p>
+                                <%= r.descripcion %>.
+                            </p>
+                            <% }); %>
+                                <form action="https://bitpay.com/checkout" method="post">
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <div class="form-group">
+                                                <label for="cabName">Nombre:</label>
+                                                <input type="text" class="form-control" id="cabName" placeholder="Nombre">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cabMail">Email:</label>
+                                                <input type="email" class="form-control" id="cabMail" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <div class="form-group">
+                                                <label for="cabFechaIn">Llegada:</label>
+                                                <input type="text" class="form-control datepicker" id="cabFechaIn" placeholder="Fecha de llegada">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cabFechaOut">Salida:</label>
+                                                <input type="text" class="form-control datepicker" id="cabFechaOut" placeholder="Fecha de salida">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Paga en Bitcoin haciendo clic en el botón o escanea el código QR con el móvil:</p>
+                                            <input type="hidden" name="action" value="cartAdd" />
+                                            <input type="hidden" name="data" value="ZnVWEByKYNanaCv3JAUHY" />
+                                            <button type="submit" class="btn btn-warning">
+                                                Paga con BTC
+                                            </button>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCab">
+                                                Código QR
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalCab" tabindex="-1" role="dialog" aria-labelledby="QR-cabana" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCab">QR Habitación Simple</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="qr/cabana.png" style="height: 100%; width: 100%; object-fit: contain">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
