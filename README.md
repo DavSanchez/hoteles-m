@@ -1,6 +1,6 @@
 # Hoteles Mortadela
 
-Una pequeña aplicación web realizada para la asignatura Tecnologías de Internet de Nueva Generación, de la [ULPGC](https://ulpgc.es/). Usa las siguientes tecnologías:
+Una pequeña aplicación web de hotel realizada para la asignatura Tecnologías de Internet de Nueva Generación, de la [ULPGC](https://ulpgc.es/). Usa las siguientes tecnologías:
 
 - [Node.js](https://nodejs.org/en/).
 - [Express 4](http://expressjs.com/).
@@ -9,7 +9,8 @@ Una pequeña aplicación web realizada para la asignatura Tecnologías de Intern
   - [node-postgres](https://www.npmjs.com/package/pg) y paquetes *npm* para gestionarlos
   - [pg-promise](https://www.npmjs.com/package/pg-promise).
 - [Heroku](https://www.heroku.com/).
-- ... junto a los lenguajes web habituales (HTML, CSS, JavaScript).
+- [Bootstrap](https://getbootstrap.com/).
+- ... junto a los lenguajes web ya habituales (HTML, CSS, JavaScript).
 
 ¡Échale un vistazo al resultado [aquí!](https://rocky-garden-75734.herokuapp.com)
 
