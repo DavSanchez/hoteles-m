@@ -1,38 +1,21 @@
-# Mortadella Hotels
+# Hoteles Mortadela
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+Una pequeña aplicación web realizada para la asignatura Tecnologías de Internet de Nueva Generación, de la [ULPGC](https://ulpgc.es/). Usa las siguientes tecnologías:
 
-Check it out [here!](https://rocky-garden-75734.herokuapp.com)
+- [Node.js](https://nodejs.org/en/).
+- [Express 4](http://expressjs.com/).
+- [EJS](http://www.ejs.co/).
+- [Postgres](https://www.postgresql.org/).
+  - [node-postgres](https://www.npmjs.com/package/pg) y paquetes *npm* para gestionarlos
+  - [pg-promise](https://www.npmjs.com/package/pg-promise).
+- [Heroku](https://www.heroku.com/).
+- ... junto a los lenguajes web habituales (HTML, CSS, JavaScript).
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+¡Échale un vistazo al resultado [aquí!](https://rocky-garden-75734.herokuapp.com)
 
-## Running Locally
+## Documentación
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
-
-```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
+Para más información sobre cómo está hecha esta aplicación visita los links cada una de las herramientas utilizadas y también los que te dejamos a continuación sobre Heroku en su Dev Center:
 
 - [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 - [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
